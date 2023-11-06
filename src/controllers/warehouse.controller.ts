@@ -11,15 +11,16 @@ const getQuickestPath = async (
     const validation = validateQuickestPathBody(req.body);
     if (validation.error) {
       res.status(400).json(validation.error.details[0].message);
+    } else {
+      res
+        .status(200)
+        .json(
+          await warehouseService.getQuickestPath(
+            validation.value.products,
+            validation.value.startingPosition
+          )
+        );
     }
-    res
-      .status(200)
-      .json(
-        await warehouseService.getQuickestPath(
-          validation.value.products,
-          validation.value.startingPosition
-        )
-      );
   } catch (err: any) {
     res.status(500).json("Error " + err);
   }

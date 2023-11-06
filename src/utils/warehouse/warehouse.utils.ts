@@ -2,6 +2,14 @@ import axios from "axios";
 import { CalculatedPosition, Position } from "../../models/werahouse.model";
 import { calculateDistance } from "./calculateDistance";
 
+//
+/**
+ * Finding shortest route in array where are positions when one route is used others route with same productId will be ignore
+ * @param productsLength 
+ * @param allPositions 
+ * @param startingCoordinates 
+ * @returns 
+ */
 export const findShortestRoute = (
   productsLength: number,
   allPositions: Position[],
@@ -56,6 +64,13 @@ export const findShortestRoute = (
   return { route: shortestRoute, distance: calculatedDistance };
 };
 
+//
+/**
+ * Finding shortest position from starting coordinates and returning that Position and distance
+ * @param positions 
+ * @param startingCoordinates 
+ * @returns 
+ */
 const findShortestPositions = (
   positions: Position[],
   startingCoordinates: Position
@@ -90,6 +105,12 @@ const findShortestPositions = (
   return lowestDistancePosition;
 };
 
+//
+/**
+ * Using external API to get that array of positions for every product in string array
+ * @param products 
+ * @returns 
+ */
 export const getPositions = async (products: string[]): Promise<Position[]> => {
   const fullProducts: Position[] = [];
   for (let index = 0; index < products.length; index++) {

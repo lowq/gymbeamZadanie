@@ -1,3 +1,13 @@
+/**
+ * Calculating distance between 2 vectors in 3D space
+ * @param x1 
+ * @param y1 
+ * @param z1 
+ * @param x2 
+ * @param y2 
+ * @param z2 
+ * @returns 
+ */
 export const calculateDistance = (
   x1: number,
   y1: number,

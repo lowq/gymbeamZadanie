@@ -4,6 +4,12 @@ import {
   getPositions,
 } from "../utils/warehouse/warehouse.utils";
 
+/**
+ * Get quickest path of all array of products
+ * @param products
+ * @param startingPosition
+ * @returns
+ */
 const getQuickestPath = async (
   products: string[],
   startingPosition: { x: number; y: number; z: number }
