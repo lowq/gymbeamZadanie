@@ -1,12 +1,12 @@
 /**
  * Calculating distance between 2 vectors in 3D space
- * @param x1 
- * @param y1 
- * @param z1 
- * @param x2 
- * @param y2 
- * @param z2 
- * @returns 
+ * @param {number} x1 - The x-coordinate of the first point.
+ * @param {number} y1 - The y-coordinate of the first point.
+ * @param {number} z1 - The z-coordinate of the first point.
+ * @param {number} x2 - The x-coordinate of the second point.
+ * @param {number} y2 - The y-coordinate of the second point.
+ * @param {number} z2 - The z-coordinate of the second point.
+ * @returns {number} The Euclidean distance between the two points.
  */
 export const calculateDistance = (
   x1: number,
