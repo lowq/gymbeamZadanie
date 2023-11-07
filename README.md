@@ -20,9 +20,7 @@ This API calculates the quickest path for picking a list of products in a wareho
       "product-2",
       "product-3",
       "product-4",
-      "product-5",
-      "product-6",
-      "product-7"
+      ......
     ],
     "startingPosition": {
       "x": 0,
@@ -51,7 +49,7 @@ The API response will be in JSON format and will include the picking order and d
               "productId": "product-1",
               "positionId": "position-55"
           },
-          ...
+          ......
       ],
       "distance": 512
   }
