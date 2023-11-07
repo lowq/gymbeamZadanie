@@ -8,7 +8,10 @@ import {
  * Get quickest path of all array of products
  * @param products
  * @param startingPosition
- * @returns
+ * @returns {
+ *     pickingOrder,
+ *     distance,
+ *   };
  */
 const getQuickestPath = async (
   products: string[],
