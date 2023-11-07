@@ -8,7 +8,7 @@ import { calculateDistance } from "./calculateDistance";
  * @param {number} productsLength - The total number of products to visit.
  * @param {Position[]} allPositions - An array of all available positions to visit.
  * @param {Position} startingCoordinates - The starting position for the route.
- * @returns {void} This function modifies internal variables and does not return a value.
+ * @returns { route: shortestRoute, distance: calculatedDistance };
  */
 export const findShortestRoute = (
   productsLength: number,
@@ -119,10 +119,10 @@ const findShortestPositions = (
 /**
  * Using external API to get that array of positions for every product in string array
  * @param products
- * @returns
+ * @returns Position[]
  */
 export const getPositions = async (products: string[]): Promise<Position[]> => {
-  const fullProducts: Position[] = [];
+  const fullPositions: Position[] = [];
   for (let index = 0; index < products.length; index++) {
     const apiURL = `https://dev.aux.boxpi.com/case-study/products/${products[index]}/positions`;
     const response = await axios.get<Position[]>(apiURL, {
@@ -131,8 +131,8 @@ export const getPositions = async (products: string[]): Promise<Position[]> => {
       },
     });
 
-    fullProducts.push(...response.data);
+    fullPositions.push(...response.data);
   }
 
-  return fullProducts;
+  return fullPositions;
 };
