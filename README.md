@@ -78,7 +78,7 @@ The API response will be in JSON format and will include the picking order and d
 
 ## Dependencies
 
-This server is built using Node.js and may have additional dependencies.
+This server is built using Node.js and have additional dependencies.
 
     @types/express:
         Description: TypeScript type definitions for Express.js web framework.
