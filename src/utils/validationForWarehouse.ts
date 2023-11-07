@@ -1,10 +1,9 @@
 import Joi from "joi";
 
-
 /**
  * Validating body of POST request
- * @param body 
- * @returns 
+ * @param body
+ * @returns
  */
 export const validateQuickestPathBody = (body: {
   products: string[];
@@ -14,11 +13,11 @@ export const validateQuickestPathBody = (body: {
     products: Joi.array()
       .items(Joi.string().regex(/^product-(?=\d+$)/))
       .required(),
-    startingPosition: {
+    startingPosition: Joi.object({
       x: Joi.number().required(),
       y: Joi.number().required(),
       z: Joi.number().required(),
-    },
+    }).required(),
   });
 
   return quickestPathSchema.validate(body);

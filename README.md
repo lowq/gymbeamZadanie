@@ -15,20 +15,20 @@ This API calculates the quickest path for picking a list of products in a wareho
 - **Request Body**:
   ```json
   {
-      "products": [
-          "product-1",
-          "product-2",
-          "product-3",
-          "product-4",
-          "product-5",
-          "product-6",
-          "product-7"
-      ],
-      "startingPosition": {
-          "x": 0,
-          "y": 0,
-          "z": 0
-      }
+    "products": [
+      "product-1",
+      "product-2",
+      "product-3",
+      "product-4",
+      "product-5",
+      "product-6",
+      "product-7"
+    ],
+    "startingPosition": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    }
   }
   ```
 
@@ -39,6 +39,7 @@ Products must be a specific array with only a string and inside there must be on
 The API response will be in JSON format and will include the picking order and distance.
 
 - **Response Body**:
+
   ```json
   {
       "pickingOrder": [
@@ -68,7 +69,11 @@ The API response will be in JSON format and will include the picking order and d
    ```shell
    npm i
    ```
-3. Start the server using the following command:
+3. Run tests
+   ```shell
+   npm run test
+   ```
+4. Start the server using the following command:
    ```shell
    npm run start-server
    ```
@@ -100,3 +105,9 @@ This server is built using Node.js and may have additional dependencies.
 
     ts-node:
         Description: An execution environment for running TypeScript files directly in Node.js without the need for compilation.
+
+    Jest:
+        Description: Jest is a JavaScript testing framework for testing code, commonly used for unit testing and easily writing and running tests.
+
+    Supertest:
+        Description: Supertest is a Node.js library for testing HTTP requests and responses, often used to test web applications and APIs.
